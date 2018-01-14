@@ -15,8 +15,8 @@ import random
 测试文件
 '''
 
-
 greetList = ['test1', 'test2', 'test3', 'test4']
+
 
 def tick():
     print('friendName()')
@@ -44,7 +44,7 @@ def myScheduler(runTime):
     print('myScheduel()')
     scheduler = BackgroundScheduler()
     print("     runTime:" + str(runTime))
-    scheduler.add_job(tick, 'date', run_date=runTime)  # 在指定的时间只执行一次,基于日期的任务调度
+    scheduler.add_job(tick, 'date', run_date=runTime + dt.timedelta(seconds=10))  # 在指定的时间只执行一次,基于日期的任务调度
     scheduler.start()
 
 
@@ -58,8 +58,8 @@ def testFun():
     '''
     print('testFun')
     # 在命令行中展示二维码
-    # itchat.auto_login(enableCmdQR=True)
-    itchat.auto_login(hotReload=True)
+    itchat.auto_login(enableCmdQR=True)
+    # itchat.auto_login(hotReload=True)
     # 获取当前时间
     now = dt.datetime.now()
     # 以下二选一
